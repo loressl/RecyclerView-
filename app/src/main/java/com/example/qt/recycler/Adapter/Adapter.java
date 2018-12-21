@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,13 +14,14 @@ import android.widget.Toast;
 import com.example.qt.recycler.Model.Person;
 import com.example.qt.recycler.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.PersonViewHolder>{
 
-    private List<Person> persons;
+    private ArrayList<Person> persons;
 
-    public Adapter(List<Person> persons){
+    public Adapter(ArrayList<Person> persons){
         this.persons= persons;
     }
 

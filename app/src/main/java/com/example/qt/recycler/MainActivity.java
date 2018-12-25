@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements Comunicator {
 
     private ArrayList<Person> persons = new ArrayList<>();
     private RecyclerView rv;
-    RecyclerItemClickListener listener;
     ListarFragment listarFragment= new ListarFragment();
     FragmentManager fm = getSupportFragmentManager();
 

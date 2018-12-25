@@ -1,6 +1,10 @@
 package com.example.qt.recycler.Adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,15 +17,23 @@ import android.widget.Toast;
 
 import com.example.qt.recycler.Model.Person;
 import com.example.qt.recycler.R;
+import com.example.qt.recycler.fragment.DetalhesFragment;
+import com.example.qt.recycler.interfaces.Comunicator;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.PersonViewHolder>{
 
+    private LayoutInflater inflater;
+    private Context context;
     private ArrayList<Person> persons;
+    private Fragment fragment;
+    Comunicator comunicator;
 
-    public Adapter(ArrayList<Person> persons){
+    public Adapter(Fragment fragment, Context context,ArrayList<Person> persons){
+        this.fragment= fragment;
+        this.context= context;
         this.persons= persons;
     }
 
@@ -49,12 +61,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.PersonViewHolder>{
         super.onAttachedToRecyclerView(recyclerView);
     }
 
+
     @Override
     public int getItemCount() {
         return persons.size();
     }
 
-    public static class PersonViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
+    public static class PersonViewHolder extends RecyclerView.ViewHolder{
 
         CardView cv;
         TextView personName;
@@ -68,12 +81,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.PersonViewHolder>{
             personName = (TextView)itemView.findViewById(R.id.person_name);
             personAge = (TextView)itemView.findViewById(R.id.person_age);
             personPhoto = (ImageView)itemView.findViewById(R.id.person_photo);
-            itemView.setOnClickListener(this);
+
         }
 
-        @Override
-        public void onClick(View view) {
-            Toast.makeText(view.getContext(),"Aqui", Toast.LENGTH_LONG).show();
-        }
+
     }
 }

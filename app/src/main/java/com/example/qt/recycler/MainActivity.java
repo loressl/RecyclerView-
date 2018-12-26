@@ -22,7 +22,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements Comunicator {
 
     private ArrayList<Person> persons = new ArrayList<>();
-    private RecyclerView rv;
     ListarFragment listarFragment= new ListarFragment();
     FragmentManager fm = getSupportFragmentManager();
 

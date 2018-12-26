@@ -25,15 +25,10 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.PersonViewHolder>{
 
-    private LayoutInflater inflater;
-    private Context context;
     private ArrayList<Person> persons;
-    private Fragment fragment;
-    Comunicator comunicator;
 
-    public Adapter(Fragment fragment, Context context,ArrayList<Person> persons){
-        this.fragment= fragment;
-        this.context= context;
+
+    public Adapter(ArrayList<Person> persons){
         this.persons= persons;
     }
 

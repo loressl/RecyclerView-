@@ -52,7 +52,7 @@ public class ListarFragment extends Fragment{
 
         receberDados();
 
-        Adapter adapter= new Adapter(this,getActivity(),persons);
+        Adapter adapter= new Adapter(persons);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager( getActivity());
         rv.setLayoutManager(layoutManager);
         rv.setHasFixedSize(true);
